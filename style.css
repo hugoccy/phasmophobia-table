@@ -1,18 +1,111 @@
+/* Inter 字體（可從 index.html 以 <link> 引入） */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* === 全域設定 === */
 body {
-  font-family: sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  margin: 0;
   padding: 2rem;
-  background: #f8f9fa;
+  line-height: 1.6;
 }
+
+/* 標題 */
+h1 {
+  font-size: 2rem;
+  color: #42b883;
+  margin-bottom: 1.5rem;
+}
+
+/* Checkbox label */
+label {
+  margin-right: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* 勾選框顏色 */
+input[type="checkbox"] {
+  accent-color: #42b883;
+}
+
+/* === 表格樣式 === */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
+  table-layout: fixed;
+  margin-top: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
 }
+
+/* 表格列固定高度 */
+tbody tr {
+  height: 56px;
+}
+
+/* 欄位樣式 */
 th, td {
-  border: 1px solid #ccc;
-  padding: 0.5rem;
+  padding: 1rem;
   text-align: left;
+  border-bottom: 1px solid #444;
+  word-wrap: break-word;
 }
-label {
-  margin-right: 1rem;
+
+/* 表頭 */
+th {
+  background-color: #252525;
+  color: #42b883;
+  font-weight: 600;
+}
+
+/* 滑鼠 hover 效果 */
+tbody tr:hover {
+  background-color: #2e2e2e;
+  transition: background-color 0.2s ease;
+}
+
+/* 無資料提示列 */
+tr.no-data td {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+
+/* === 三態篩選按鈕樣式 === */
+button.btn {
+  margin: 0.25rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-yes {
+  background-color: #42b883;
+  color: #fff;
+}
+
+.btn-no {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.btn-any {
+  background-color: #444;
+  color: #fff;
+}
+
+/* === 響應式設計 === */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+    font-size: 14px;
+  }
 }

@@ -1,0 +1,55 @@
+﻿鬼,emf5,orb,box,freezing,fingerprint,writing,dots,trait,speed,sanity
+魂魄 (Spirit),TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,1. 點燃聖木 下次獵殺隔180秒,常速,50%
+魅影 (Wraith),TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,"1. 不會踩鹽
+2. 離鬼房遠的時候 突然出現EMF 2 or 5 可能是魅影傳送到玩家旁邊",常速,50%
+幻影 (Phantom),FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,"1. 獵殺時閃爍時間間隔長 
+2. 拍攝會進入隱身 沒有馬賽克
+3. 會隨機附身到玩家 出現EMF 2",常速,50%
+騷靈 (Poltergeist),FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,1. 同時大力丟多個物品,常速,50%
+女妖 (Banshee),FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,"1. 獵殺時會鎖定目標
+2. 收音器有特殊尖叫
+3. 鬼魂事件常唱歌",常速,50%
+巨靈 (Jinn),TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,1. 不會關閉電閘,"打開電閘時 獵殺時看到玩家會大加速
+靠近目標會減到常速",50%
+夢魘 (Mare),FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,"1. 不會主動開燈 
+2. 開燈時會瞬間關燈 
+3. 喜歡炸燈
+4. 不能開遙控器",常速,"燈打開 60%
+燈關掉 40%"
+亡魂 (Revenant),FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,,"沒感知到玩家的時候較慢
+感知到玩家會加速 到達感知位置時會減速",50%
+暗影 (Shade),TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,"1. 被召喚出來時 有機會是黑影
+2. 有人時幾乎不會互動",常速,50%
+惡魔 (Demon),FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,"1. 有機率無視理智獵殺
+2. 獵殺冷卻時間20秒
+3. 點燃聖木 下次獵殺隔60秒",常速,70%
+幽靈 (Yurei),FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,"1. 點燃聖木 會約束幽靈在鬼房90秒
+2. 雙碰門 延遲關門 關大門",常速,50%
+赤鬼 (Oni),TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,"1. 不會有鬼霧
+2. 獵殺時閃爍間隔短",常速,50%
+妖怪 (Yokai),FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"1. 通靈盒後有機會高理智獵殺
+2. 獵殺時難以被電子設備吸引",常速,50%
+寒魔 (Hantu),FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,"1. 更喜歡關電閘 不會開電閘
+2. 關閉電閘時(or 3度以下) 獵殺會吐出寒氣
+3. 一定有刺骨寒溫",熱的時候慢 冷的時候快,50%
+御靈 (Goryo),TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,"1. 不會更換鬼房
+2. 只能用攝影機觀察的點陣
+3. 一定有點陣",常速,50%
+鬼嬰 (Myling),TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,"1. 獵殺時聲音範圍小 電子設備被干擾之後才會聽到腳步聲
+2. 收音器更容易獲得回應",常速,50%
+怨靈 (Onryo),FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,"1. 不會在火焰上獵殺
+2. 吹滅三次蠟燭會獵殺
+3. 可以跨房間熄滅蠟燭",常速,50%
+攣魂 (Twins),TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,"1. 會遠距離兩個房間互動
+2. 副鬼會有EMF 5 其他沒有",主鬼慢 副鬼快,50%
+雷魂 (Raiju),TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,1. 電子干擾更遠,"沒吸電視常速
+有電子設備會加速",50%
+幻妖 (Obake),TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,"1. 獵殺時會變換形態
+2. 二燈 五監 五鍵 六門",常速,50%
+擬魂 (Mimic),FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,1. 有假靈球證據,不一定,不一定
+魔洛伊 (Moroi),FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,"1. 會詛咒玩家2倍速掉理智
+2. 聖木致盲7.5秒",裡至高速度慢 理智低速度快,50%
+霧影 (Deogen),FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,"1. 會定位所有人 獵殺時 不能躲藏 只能溜鬼
+2. 通靈盒有機會得到特殊喘息
+3. 一定有通靈盒",離玩家遠速度快 離玩家近速度超慢,40%
+剎耶 (Thaye),FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,1. 獵殺時不會因為看到玩家而加速,年輕速度快 年老速度慢,75% - 15%

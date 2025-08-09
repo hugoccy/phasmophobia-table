@@ -1,42 +1,53 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
-  <title>材料篩選表格 (Vue)</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>恐鬼症｜鬼魂資料表</title>
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div id="app">
-    <h1>材料篩選器</h1>
+    <h1>恐鬼症｜鬼魂篩選器</h1>
 
-    <label>
-      <input type="checkbox" v-model="filters.donor" />
-      Donor
-    </label>
-    <label>
-      <input type="checkbox" v-model="filters.acceptor" />
-      Acceptor
-    </label>
+    <!-- 篩選按鈕區 -->
+    <div>
+      <button
+        v-for="(label, key) in evidenceLabels"
+        :key="key"
+        @click="cycleState(key)"
+        :class="getButtonClass(evidence[key])"
+      >
+        {{ label }} {{ stateSymbol(evidence[key]) }}
+      </button>
+    </div>
 
+    <!-- 顯示鬼魂資料的表格 -->
     <table>
       <thead>
         <tr>
-          <th>名稱</th>
-          <th>類型</th>
-          <th>分數</th>
+          <th>鬼魂</th>
+          <th>主要特徵</th>
+          <th>速度</th>
+          <th>獵殺理智</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in filteredData" :key="item.name">
-          <td>{{ item.name }}</td>
-          <td>{{ item.type }}</td>
-          <td>{{ item.score }}</td>
+        <tr v-for="ghost in filteredGhosts" :key="ghost.name">
+          <td>{{ ghost.name }}</td>
+          <td style="white-space: pre-wrap;">{{ ghost.trait }}</td>
+          <td>{{ ghost.speed }}</td>
+          <td>{{ ghost.sanity }}</td>
+        </tr>
+        <tr v-if="filteredGhosts.length === 0" class="no-data">
+          <td colspan="4">無符合的鬼魂</td>
         </tr>
       </tbody>
     </table>
   </div>
 
+  <!-- 載入資料與 Vue 應用程式 -->
   <script src="data.js"></script>
   <script>
     const { createApp } = Vue;
@@ -44,21 +55,49 @@
     createApp({
       data() {
         return {
-          rawData: tableData,
-          filters: {
-            donor: true,
-            acceptor: true
+          ghosts: tableData,
+          evidence: {
+            emf5: null,
+            orb: null,
+            box: null,
+            freezing: null,
+            fingerprints: null,
+            writing: null,
+            dots: null
+          },
+          evidenceLabels: {
+            emf5: "EMF 5",
+            orb: "靈球",
+            box: "通靈盒",
+            freezing: "刺骨寒溫",
+            fingerprints: "指紋",
+            writing: "鬼魂筆跡",
+            dots: "點陣投影儀"
           }
         };
       },
       computed: {
-        filteredData() {
-          return this.rawData.filter(item => {
-            return (
-              (this.filters.donor && item.type === "Donor") ||
-              (this.filters.acceptor && item.type === "Acceptor")
-            );
-          });
+        filteredGhosts() {
+          return this.ghosts.filter(ghost =>
+            Object.keys(this.evidence).every(key => {
+              const val = this.evidence[key];
+              return val === null || ghost[key] === val;
+            })
+          );
+        }
+      },
+      methods: {
+        cycleState(key) {
+          const current = this.evidence[key];
+          this.evidence[key] = current === null ? true : current === true ? false : null;
+        },
+        stateSymbol(val) {
+          return val === true ? "✅" : val === false ? "❌" : "⬜";
+        },
+        getButtonClass(val) {
+          if (val === true) return "btn btn-yes";
+          if (val === false) return "btn btn-no";
+          return "btn btn-any";
         }
       }
     }).mount("#app");

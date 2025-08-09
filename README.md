@@ -1,0 +1,2 @@
+# phasmophobia-table
+phasmophobia-table

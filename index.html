@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>材料篩選表格 (Vue)</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>材料篩選器</h1>
+
+    <label>
+      <input type="checkbox" v-model="filters.donor" />
+      Donor
+    </label>
+    <label>
+      <input type="checkbox" v-model="filters.acceptor" />
+      Acceptor
+    </label>
+
+    <table>
+      <thead>
+        <tr>
+          <th>名稱</th>
+          <th>類型</th>
+          <th>分數</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in filteredData" :key="item.name">
+          <td>{{ item.name }}</td>
+          <td>{{ item.type }}</td>
+          <td>{{ item.score }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          rawData: tableData,
+          filters: {
+            donor: true,
+            acceptor: true
+          }
+        };
+      },
+      computed: {
+        filteredData() {
+          return this.rawData.filter(item => {
+            return (
+              (this.filters.donor && item.type === "Donor") ||
+              (this.filters.acceptor && item.type === "Acceptor")
+            );
+          });
+        }
+      }
+    }).mount("#app");
+  </script>
+</body>
+</html>

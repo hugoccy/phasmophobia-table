@@ -23,6 +23,13 @@
       </button>
     </div>
 
+    <!-- 重置按鈕 -->
+    <div style="margin-bottom: 2rem;">
+      <button @click="resetFilters" class="btn btn-any">
+        🔄 重置所有篩選
+      </button>
+    </div>
+    
     <!-- 顯示鬼魂資料的表格 -->
     <table>
       <thead>
@@ -99,8 +106,14 @@
           if (val === false) return "btn btn-no";
           return "btn btn-any";
         }
+        resetFilters() {
+          for (const key in this.evidence) {
+            this.evidence[key] = null;
+          }
+        }
       }
     }).mount("#app");
   </script>
 </body>
 </html>
+

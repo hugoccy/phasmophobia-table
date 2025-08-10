@@ -112,7 +112,7 @@ const tableData = [
     "fingerprints":false,
     "writing":true,
     "dots":false,
-    "trait":"1. 被召喚出來時 有機會是黑影\n2. 有人時幾乎不會互動",
+    "trait":"1. 被召喚出來時 有機會是黑影\n2. 有人時幾乎不會互動or獵殺",
     "speed":"常速",
     "sanity":"50%"
   },
@@ -243,7 +243,7 @@ const tableData = [
     "writing":false,
     "dots":true,
     "trait":"1. 電子干擾更遠",
-    "speed":"沒吸電視常速\n有電子設備會加速",
+    "speed":"沒吸電是常速\n有電子設備會加速",
     "sanity":"50%"
   },
   {

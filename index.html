@@ -105,15 +105,16 @@
           if (val === true) return "btn btn-yes";
           if (val === false) return "btn btn-no";
           return "btn btn-any";
-        }
+        },
         resetFilters() {
           for (const key in this.evidence) {
             this.evidence[key] = null;
           }
-        }
+        },
       }
     }).mount("#app");
   </script>
 </body>
 </html>
+
 
